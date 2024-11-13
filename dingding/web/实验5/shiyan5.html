@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>太极图</title>
+		<style type="text/css">
+			body {
+				background-color: #555555;
+			}
+
+			.taiji {
+				width: 400px;
+				height: 400px;
+				background-color: bisque;
+				margin: 20px auto;
+				border-radius: 400px;
+				box-shadow: 0px 0px 10px darkgray;
+				position: relative;
+				/* transform: rotate(90deg); */
+				animation: 2s linear infinite rotation;
+			}
+
+			.taiji::before{
+				content: "";
+				display: block;
+				width: 200px;
+				height: 400px;
+				background-color: black;
+				position: absolute;
+				left: 200;
+				top: 0;
+				border-radius: 200px 0 0 200px;
+			}
+			.taiji::after{
+				content: "";
+				display: block;
+				width: 200px;
+				height: 400px;
+				background-color: white;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				border-radius: 0 200px 200px 0;
+			} 
+			.yin{
+				width: 200px;
+				height: 200px;
+				background-color: black;
+				position: absolute;
+				left: 100px;
+				top: 0;
+				z-index: 2;
+				border-radius: 200px;
+
+			}
+			.yan{
+				width: 200px;
+				height: 200px;
+				background-color: white;
+				position: absolute;
+				right: 100px;
+				bottom: 0;
+				z-index: 2;
+				border-radius: 200px;
+			}
+			.yin::before,.yan::before{
+				content: "";
+				display: block;
+				width: 75px;
+				height: 75px;
+				border-radius: 75px;
+				position: absolute;
+			}
+			.yin::before{
+				background-color: white;
+				left: 55px;
+				top: 60px;
+			}
+			.yan::before{
+				background-color: black;
+				right: 55px;
+				bottom: 60px;
+			}
+			@keyframes rotation{
+				0%{
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="taiji">
+			<!-- before -->
+			<div class="yin">
+				<!-- before -->
+			</div>
+			<div class="yan">
+				<!-- before -->
+			</div>
+			<!-- after -->
+		</div>
+	</body>
+</html>

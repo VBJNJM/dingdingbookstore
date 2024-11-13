@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagination Example</title>
+<style>
+  .pagination {
+    display: flex;
+    list-style-type: none;
+  }
+  .pagination li {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .active {
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div id="data-container"></div>
+<ul class="pagination" id="pagination-container"></ul>
+
+<script>
+  // Sample data array (1000 items for example)
+  const data = Array.from({ length: 1000 }, (v, i) => ({ id: i + 1, name: `Item ${i + 1}` }));
+
+  // Pagination parameters
+  const itemsPerPage = 10;
+  let currentPage = 1;
+
+  // Function to render data for the current page
+  function renderData(page) {
+    currentPage = page;
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const paginatedData = data.slice(start, end);
+
+    const dataContainer = document.getElementById('data-container');
+    dataContainer.innerHTML = paginatedData.map(item => `<div>${item.name}</div>`).join('');
+  }
+
+  // Function to render pagination buttons
+  function renderPagination() {
+    const paginationContainer = document.getElementById('pagination-container');
+    const totalPages = Math.ceil(data.length / itemsPerPage);
+
+    let buttons = '';
+    for (let i = 1; i <= totalPages; i++) {
+      buttons += `<li class="${i === currentPage ? 'active' : ''}" onclick="renderData(${i})">${i}</li>`;
+    }
+    paginationContainer.innerHTML = buttons;
+  }
+
+  // Initial render
+  renderData(currentPage);
+  renderPagination();
+</script>
+
+</body>
+</html>

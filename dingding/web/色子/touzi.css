@@ -1,0 +1,88 @@
+h2{
+    text-align: center;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 680px;
+    justify-content: space-between;
+}
+
+.container{
+    display: flex;
+    width: 320px;
+    height: 320px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content:space-between;
+}
+
+.box{
+    width: 90px;
+    height: 90px;
+    background-color: #EEEEEE;
+    padding: 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;            
+}
+
+.row{
+    display: flex;
+    flex-basis: 100%;
+}
+
+.item{
+    width: 24px;
+    height: 24px;
+    background-color: #000000;
+    margin: 3px;
+    border-radius: 50%;
+}
+    
+
+/*排列方向*/
+.flex-direction-column{
+     flex-direction: column;
+}
+
+/*水平排列*/
+.justify-content-center{
+    justify-content: center;
+}
+
+.justify-content-flex-end{
+    justify-content: flex-end;
+}
+
+.justify-content-space-between{
+    justify-content: space-between;
+}
+    
+/*垂直排列*/
+ .align-items-center{
+     align-items: center;
+ }
+
+ .align-items-flex-end{
+     align-items: flex-end;
+ }
+
+ .align-items-space-between{
+     align-items: space-between;
+ }
+
+/*多轴对齐*/
+ .align-content-space-between{
+    align-content: space-between;
+ }
+
+ /*项目排列*/
+ .align-self-center{
+    align-self: center;
+ }
+
+ .align-self-flex-end{
+    align-self: flex-end;
+ }
